@@ -39,16 +39,26 @@ WebUI.scrollToPosition(0, 14000)
 
 WebUI.delay(2)
 
-'Click on Page Number'
+'Click on GlobalVariable: <Page Number>'
 modified_obj = WebUI.modifyObjectProperty(findTestObject('Page_Buy iiPhone and get free shipp/page_number'), 'text', 'equals', 
     GlobalVariable.page_number, true, FailureHandling.CONTINUE_ON_FAILURE)
-print(modified_obj)
+WebUI.click(modified_obj)
+WebUI.delay(2)
+
+'Scroll to bottom'
+WebUI.scrollToPosition(0, 14000)
+
+'Dinamically build xpath_locator for Premium Product based on variable <choose_premium_prod>'
+xpath_locator = "//div[@id='p4p']/div[2]/div[" + GlobalVariable.choose_premium_prod + "]/div[2]/div/a"
+print("xpath_locator:" + xpath_locator)
+modified_obj = WebUI.modifyObjectProperty(findTestObject('Page_Buy iPhone and get free shippi/Premium_Related_Products_2'), 'xpath', 'equals',
+	xpath_locator, true, FailureHandling.CONTINUE_ON_FAILURE)
+'Click on Premium Product specified by variable <choose_premium_prod>'
 WebUI.click(modified_obj)
 
-'Click on 2nd ad'
-WebUI.click(findTestObject('Page_Buy iPhone and get free shippi/2nd_ad'))
-
+'Switch to New Tab'
 WebUI.switchToWindowIndex('1')
 
+'Verify "Buy Now" button is shown'
 WebUI.verifyElementClickable(findTestObject('Object Repository/Page_Lovebay LED 2M Micro USB Cable/button_Buy Now'))
 

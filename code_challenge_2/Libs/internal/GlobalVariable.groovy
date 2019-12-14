@@ -23,16 +23,22 @@ public class GlobalVariable {
      */
     public static Object page_number
      
+    /**
+     * <p></p>
+     */
+    public static Object choose_premium_prod
+     
 
     static {
         def allVariables = [:]        
-        allVariables.put('default', ['search_for_text' : 'iPhone', 'page_number' : '2'])
+        allVariables.put('default', ['search_for_text' : 'Samsung', 'page_number' : '5', 'choose_premium_prod' : 3])
         
         String profileName = RunConfiguration.getExecutionProfile()
         
         def selectedVariables = allVariables[profileName]
         search_for_text = selectedVariables['search_for_text']
         page_number = selectedVariables['page_number']
+        choose_premium_prod = selectedVariables['choose_premium_prod']
         
     }
 }

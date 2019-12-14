@@ -6,12 +6,17 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'iPhone'</initValue>
+      <initValue>'Samsung'</initValue>
       <name>search_for_text</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'2'</initValue>
+      <initValue>'5'</initValue>
       <name>page_number</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>3</initValue>
+      <name>choose_premium_prod</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
